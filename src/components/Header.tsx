@@ -3,7 +3,12 @@ import IconEdit from "../assets/icons/pencil.svg"
 import IconDelete from "../assets/icons/trash.svg"
 import IconSearch from "../assets/icons/search.svg"
 
-export function Header() {
+interface HeaderProps {
+  searchTerm: string
+  onSearchTermChange: (searchTerm: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export function Header({ searchTerm, onSearchTermChange }: HeaderProps) {
   return (
     <header className="header">
       <div className="header__container container">
@@ -26,6 +31,8 @@ export function Header() {
           <input
             type="search"
             placeholder="Busque por nome ou por dados de contato..."
+            onChange={(ev) => onSearchTermChange(ev)}
+            value={searchTerm}
           />
         </form>
       </div>

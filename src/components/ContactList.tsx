@@ -1,10 +1,12 @@
 import { ContactLetterGroup } from "./ContactLetterGroup"
-import MOCK_DATA from "../mocks/MOCK_DATA.json"
 import { useEffect, useState } from "react"
 import { Contact } from "../global/interfaces"
 
-export function ContactList() {
-  const [contacts, setContacts] = useState<Contact[]>([])
+interface ContactListProps {
+  contacts: Contact[]
+}
+
+export function ContactList({ contacts }: ContactListProps) {
   const [uniqueChars, setUniqueChars] = useState<string[]>([])
 
   const filterChars = () => {
@@ -18,17 +20,6 @@ export function ContactList() {
 
     setUniqueChars(uniqueChars.sort())
   }
-
-  const fetchContacts = async () => {
-    const response = await fetch("../mocks/MOCK_DATA.json")
-    const jsonData: Contact[] = await response.json()
-
-    setContacts(jsonData)
-  }
-
-  useEffect(() => {
-    fetchContacts()
-  }, [])
 
   useEffect(() => {
     filterChars()

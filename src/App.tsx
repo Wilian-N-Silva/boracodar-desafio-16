@@ -25,9 +25,15 @@ export default function App() {
       searchTerm.trim().length > 0 || searchTerm === ""
         ? contacts.filter(
             (contact) =>
-              contact.first_name.toLocaleLowerCase().includes(searchTerm) ||
-              contact.last_name.toLocaleLowerCase().includes(searchTerm) ||
-              contact.phone.toLocaleLowerCase().includes(searchTerm)
+              contact.first_name
+                .toLocaleLowerCase()
+                .includes(searchTerm.toLocaleLowerCase()) ||
+              contact.last_name
+                .toLocaleLowerCase()
+                .includes(searchTerm.toLocaleLowerCase()) ||
+              contact.phone
+                .toLocaleLowerCase()
+                .includes(searchTerm.toLocaleLowerCase())
           )
         : contacts
 

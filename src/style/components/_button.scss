@@ -1,0 +1,16 @@
+.button {
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--icon {
+    height: 24px;
+    aspect-ratio: 1/1;
+    img {
+      width: 100%;
+    }
+  }
+}

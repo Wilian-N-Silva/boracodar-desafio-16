@@ -1,0 +1,82 @@
+.contacts {
+  position: relative;
+  height: 100%;
+
+  &__container {
+    padding: 48px 40px 0;
+    overflow-y: scroll;
+    position: absolute;
+    inset: 0;
+
+    &::-webkit-scrollbar {
+      background: transparent;
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $color-cinder-700;
+      border-radius: 999px;
+    }
+  }
+  &__group {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+  &__letter {
+    top: 8px;
+    position: sticky;
+    display: flex;
+    height: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+
+    font: 700 1rem/1.1875 "Roboto", sans-serif;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 52px;
+  }
+
+  &__card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    transition: background-color 0.3s;
+    width: 100%;
+    border-radius: 99px;
+    &:hover {
+      cursor: pointer;
+      background-color: $color-cinder-800;
+    }
+  }
+
+  &__avatar {
+    height: 3rem;
+    aspect-ratio: 1/1;
+    background-color: gray;
+    border-radius: 50%;
+    & img {
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+
+  &__info {
+  }
+
+  &__name {
+    color: $color-gray-200;
+    margin-bottom: 0.25rem;
+    font: 700 1rem/1.1875 "Roboto", sans-serif;
+  }
+  &__phone {
+    color: $color-purple-500;
+    font: 400 0.75rem/0.875 "Roboto", sans-serif;
+  }
+}
